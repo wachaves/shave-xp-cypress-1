@@ -1,0 +1,40 @@
+{
+    "success": {
+        "name": "William",
+        "email": "wchaves@chaves.com",
+        "password": "wac123"
+    },
+
+    "invpass": {
+        "name": "William",
+        "email": "wchaves@chaves.com",
+        "password": "abc123"
+    },
+
+    "email404": {
+        "name": "William",
+        "email": "wchaves@404.com",
+        "password": "wac123"
+    },
+
+    "shortpass": [
+        "1",
+        "12",
+        "123",
+        "1234",
+        "12345"
+    ],
+
+    "invemails": [
+        "wchaves$chaves.com",
+        "wachaves.com.br",
+        "@chaves.com",
+        "@",
+        "wachaves@",
+        "wachaves@chaves",
+        "789456",
+        "@#$%¨&",
+        "wac123"
+    ]
+
+}

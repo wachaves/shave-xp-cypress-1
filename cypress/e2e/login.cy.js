@@ -1,29 +1,20 @@
 
 import loginPage from '../support/pages/login'
 import shaversPage from '../support/pages/shavers'
+import data from '../fixtures/users-login.json'
 
 describe('login', () => {
 
     context('quando submento o forumulário', () => {
-
-        it('deve logar co sucesso', () => {
-            const user = {
-                name: 'William',
-                email: 'wchaves@chaves.com',
-                password: 'wac123'
-            }
+        it('deve logar com sucesso', () => {
+            const user = data.success
 
             loginPage.submit(user.email, user.password)
             shaversPage.header.userShouldBeLoggedIn(user.name)
-
         })
 
         it('não deve logar com senha incorreta', () => {
-            const user = {
-                name: 'William',
-                email: 'wchaves@chaves.com',
-                password: 'incorreta'
-            }
+            const user = data.invpass
 
             loginPage.submit(user.email, user.password)
 
@@ -33,11 +24,7 @@ describe('login', () => {
         })
 
         it('não deve logar com email não cadastrado', () => {
-            const user = {
-                name: 'William',
-                email: 'wchaves@error.com',
-                password: 'wac123'
-            }
+            const user = data.email404
 
             loginPage.submit(user.email, user.password)
 
@@ -64,16 +51,7 @@ describe('login', () => {
         })
 
         context('senha muito curta', () => {
-
-            const passwords = [
-                '1',
-                '12',
-                '123',
-                '1234',
-                '12345'
-            ]
-
-            passwords.forEach((p) => {
+            data.shortpass.forEach((p) => {
                 // it('não deve logar com a senha ' + p, ()=> {
                 it(`não deve logar com a senha: ${p}`, () => {
                     loginPage.submit('wachaves@teste.com', p)
@@ -83,20 +61,7 @@ describe('login', () => {
         })
 
         context('email no formato incorreto', () => {
-
-            const emails = [
-                'wchaves$chaves.com',
-                'wachaves.com.br',
-                '@chaves.com',
-                '@',
-                'wachaves@',
-                'wachaves@chaves',
-                '789456',
-                '@#$%¨&',
-                'wac123'
-            ]
-
-            emails.forEach((e) => {
+            data.invemails.forEach((e) => {
                 // it('não deve logar com a senha ' + e, ()=> {
                 it(`não deve logar com o email: ${e}`, () => {
                     loginPage.submit(e, 'wac123')
@@ -104,10 +69,6 @@ describe('login', () => {
                 })
             })
         })
-
-
-
-
     })
 
 })
