@@ -25,14 +25,18 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('createUser', (user) => {
-    cy.task('removeUser', user.email)
-        .then(function (result) {
-            cy.log(result)
-        })
+
+    // cy.request({
+    //     method: 'DELETE',
+    //     url: 'http://localhost:5000/user/' + user.email
+    // }).then(function (reponse) {
+    //     expect(reponse.status).to.eq(204)
+    // })
+
 
     cy.request({
         method: 'POST',
-        url: 'http://localhost:3333/users',
+        url: 'http://localhost:5000/user',
         body: user
     }).then(function (reponse) {
         expect(reponse.status).to.eq(201)

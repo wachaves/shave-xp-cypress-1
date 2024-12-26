@@ -2,7 +2,8 @@
     "success": {
         "name": "William",
         "email": "wchaves@chaves.com",
-        "password": "wac123"
+        "password": "wac123",
+        "is_shaver": false
     },
 
     "invpass": {
