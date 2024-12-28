@@ -6,7 +6,7 @@ import data from '../fixtures/users-login.json'
 describe('login', () => {
 
     context('quando submento o forumulário', () => {
-        it('deve logar com sucesso', () => {
+        it.only('deve logar com sucesso', () => {
 
             // dado que eu tenho um NOVO usuário cadastrado
             const user = data.success

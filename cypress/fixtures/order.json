@@ -1,0 +1,15 @@
+{
+    "customer": {
+        "name": "Fabi Chaves",
+        "email": "fabi@chaves.com",
+        "password": "wac123",
+        "is_shaver": false
+    },
+    "shaver": {
+        "name": "Noah Smith"
+    },
+    "service": {
+        "description": "Tintura capilar",
+        "price": "99,99"
+    }
+}
