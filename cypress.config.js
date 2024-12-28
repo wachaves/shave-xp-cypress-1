@@ -10,6 +10,11 @@ module.exports = defineConfig({
         removeUser
       })
     },
+    env: {
+      apiUrl: 'http://localhost:3333',
+      apiHelper: 'http://localhost:5000'
+    },
+
     viewportWidth: 1920,
     viewportHeight: 1080,
     baseUrl: 'http://localhost:3000'
