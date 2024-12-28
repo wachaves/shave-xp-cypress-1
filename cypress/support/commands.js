@@ -59,7 +59,7 @@ Cypress.Commands.add('recoveryPass', (email) => {
 Cypress.Commands.add('getToken', (email) => {
     cy.request({
         method: 'GET',
-        url: Cypress.env('apiHelper') + 'token/' + email
+        url: Cypress.env('apiHelper') + '/token/' + email
     }).then(result => {
         expect(result.status).to.eql(200)
         cy.log(result.body.token)
